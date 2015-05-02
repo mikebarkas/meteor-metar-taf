@@ -1,10 +1,14 @@
 if (Meteor.isClient) {
 
   Meteor.call('checkWx', function (err, res) {
-//    if (err) {
+  // if (err) {
     console.log(res);
-//    }
+  // }
+    //var parser = new DOMParser();
+    //var weatherXml = parser.parseFromString(res.content, "text/xml");
+    //Session.set('weather', weatherXml);
     Session.set('weather', res.content);
+
   });
 
   Template.wx.helpers({
